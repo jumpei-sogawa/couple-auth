@@ -16,10 +16,11 @@ router.get('/', function(req, res, next) {
     if (err) {
       console.log(err);
     } else {
-      client.query('SELECT name FROM users', function (err, result) {
+      client.query('SELECT * FROM couples', function (err, result) {
         res.render('index', {
           title: 'Express',
-          datas: result.rows[0].name,
+          couples: result,
+          len: result.rows.length,
         });
         console.log(result);
       });

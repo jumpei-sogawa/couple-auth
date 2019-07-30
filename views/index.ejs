@@ -7,6 +7,22 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <p><%= datas %></p>
+    <p><%= len %></p>
+    <table>
+      <tr>
+        <td>id</td>
+        <td>req_user_id</td>
+        <td>res_user_id</td>
+        <td>status</td>
+      </tr>
+      <% for (var i = 0; i < len; i++) { %>
+        <tr>
+          <td><%= couples.rows[i].id %></td>
+          <td><%= couples.rows[i].req_user_id %></td>
+          <td><%= couples.rows[i].res_user_id %></td>
+          <td><%= couples.rows[i].status %></td>
+        </tr>
+      <% } %>
+    </table>
   </body>
 </html>

@@ -20,7 +20,7 @@ router.post('/', function(request, response, next) {
       console.log(err);
     } else {
       client.query(
-        'INSERT INTO couples(id, req_user_id, res_user_id, status) VALUES(5, $1, $2, 10);',
+        'INSERT INTO couples(req_user_id, res_user_id, status) VALUES($1, $2, 10);',
         [reqUserId, resUserId],
         function (err, result) {
           response.redirect('/');
